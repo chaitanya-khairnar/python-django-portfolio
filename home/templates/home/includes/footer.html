@@ -1,0 +1,57 @@
+{% load static %}
+<!-- footer -->
+    <footer class="footer-section footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
+            <!-- logo -->
+            <a href="index.html">
+            <!-- <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logo"> -->
+            </a>
+        </div>
+        <!-- footer menu -->
+        <nav class="col-lg-8 align-self-center mb-5">
+            <ul class="list-inline text-lg-right text-center footer-menu">
+                {% if page_id == 'home' %}
+                <li class="list-inline-item active page-scroll"><a href="#{{ inpage_links.home }}">Home</a></li>
+                <li class="list-inline-item page-scroll"><a class="page-scroll" href="#{{ inpage_links.project }}">Project</a></li>
+                <li class="list-inline-item page-scroll"><a href="#{{ inpage_links.resume }}">Resume</a></li>
+                <li class="list-inline-item page-scroll"><a href="#{{ inpage_links.contact }}">Contact</a></li>
+
+                {% else %}
+                <li class="list-inline-item active page-scroll">
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="list-inline-item active page-scroll">
+                    <a href="{% url 'home'%}#{{ outpage_links.project }}">Projects</a>
+                </li>
+                <li class="list-inline-item active page-scroll">
+                    <a href="{% url 'home'%}#{{ outpage_links.resume }}">Resume</a>
+                </li>
+                <li class="list-inline-item active page-scroll">
+                    <a href="{% url 'home'%}#{{ outpage_links.contact }}">Contact</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <!-- footer social icon -->
+        <nav class="col-12">
+            <ul class="list-inline text-lg-right text-center social-icon">
+                <li class="list-inline-item">
+                <a class="facebook" href="#"><i class="ti-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                <a class="twitter" href="#"><i class="ti-twitter-alt"></i></a>
+                </li>
+                <li class="list-inline-item">
+                <a class="linkedin" href="#"><i class="ti-linkedin"></i></a>
+                </li>
+                <li class="list-inline-item">
+                <a class="black" href="#"><i class="ti-github"></i></a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </div>
+</footer>
+<!-- /footer -->

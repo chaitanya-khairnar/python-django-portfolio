@@ -1,0 +1,55 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Chaitanya Khairnar</title>
+    
+        <!-- mobile responsive meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <!-- ** Plugins Needed for the Project ** -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- themefy-icon -->
+        <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+        <!-- slick slider -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <!-- venobox popup -->
+        <link rel="stylesheet" href="{% static 'plugins/Venobox/venobox.css' %}">
+        <!-- aos -->
+        <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+    
+        <!-- Main Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        
+        <!--Favicon-->
+        <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+    
+    </head>
+    <body>
+        {% include 'home/includes/header.html' %}
+
+
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<!-- slick slider -->
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<!-- venobox -->
+<script src="{% static 'plugins/Venobox/venobox.min.js' %}"></script>
+<!-- aos -->
+<script src="{% static 'plugins/aos/aos.js' %}"></script>
+<!-- Main Script -->
+<script src="{% static 'js/home_script.js' %}"></script>
+
+{% block 'body' %}
+
+{% endblock %}
+
+{% include 'home/includes/footer.html' %}

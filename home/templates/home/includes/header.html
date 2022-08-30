@@ -1,0 +1,59 @@
+{% load static %}
+
+<!-- navigation -->
+<section class="fixed-top navigation">
+    <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <!-- <img src="{% static 'images/logo.png' %}" alt="logo"> --></a>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- navbar -->
+                <div class="collapse navbar-collapse text-center" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    {% if page_id ==  'home' %}
+                    <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#{{ inpage_links.home }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#{{ inpage_links.project }}">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#{{ inpage_links.resume }}">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#{{ inpage_links.contact }}">Contact</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{% url 'home'%}#{{ outpage_links.project }}">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{% url 'home'%}#{{ outpage_links.resume }}">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{% url 'home'%}#{{ outpage_links.contact }}">Contact</a>
+                    </li>
+                    {% endif %}
+
+                    <!-- <li class="nav-item">
+                    <a class="nav-link" href="service.html">Service</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                    </li> -->
+                    
+                </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+<!-- /navigation -->

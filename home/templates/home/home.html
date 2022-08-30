@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% block 'body'%}
+{% load static %}
+    <main role="main">
+        <section id="{{ inpage_links.home }}" class="hero-section hero" data-background="" style="background-image: url(/static/images/hero-area/banner-bg.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center zindex-1">
+                    <h1 class="mb-3">Chaitanya Khairnar<br></h1>
+                    <h4 class="mb-3">Business Analyst and Developer @ Sarjam Limited</h4>
+                    <p class="mb-4">Talks about #sql, #excel, #tableau, #powerBI, #python, #DataAnalytics, #AI, and #MachineLearning</p>
+                    <a href="#{{ inpage_links.project }}" class="btn btn-secondary btn-lg page-scroll">explore</a>
+                    <!-- banner image -->
+                    <img class="img-fluid w-100 banner-image" src="{% static 'images/hero-area/banner-img.png' %}" alt="banner-img">
+                    </div>
+                </div>
+            </div>
+            <!-- background shapes -->
+            <div id="scene">
+                <img class="img-fluid hero-bg-1 up-down-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="">
+                <img class="img-fluid hero-bg-2 left-right-animation" src="{% static 'images/background-shape/seo-ball-1.png' %}" alt="">
+                <img class="img-fluid hero-bg-3 left-right-animation" src="{% static 'images/background-shape/seo-half-cycle.png' %}" alt="">
+                <img class="img-fluid hero-bg-4 up-down-animation" src="{% static 'images/background-shape/green-dot.png' %}" alt="">
+                <img class="img-fluid hero-bg-5 left-right-animation" src="{% static 'images/background-shape/blue-half-cycle.png' %}" alt="">
+                <img class="img-fluid hero-bg-6 up-down-animation" src="{% static 'images/background-shape/seo-ball-1.png' %}" alt="">
+                <img class="img-fluid hero-bg-7 left-right-animation" src="{% static 'images/background-shape/yellow-triangle.png' %}" alt="">
+                <img class="img-fluid hero-bg-8 up-down-animation" src="{% static 'images/background-shape/service-half-cycle.png' %}" alt="">
+                <img class="img-fluid hero-bg-9 up-down-animation" src="{% static 'images/background-shape/team-bg-triangle.png' %}" alt="">
+            </div>
+        </section>
+        <!-- /hero-area -->
+
+        <!-- Project area -->
+        <section id="{{ inpage_links.project }}" class="projects">
+            <div class="container">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-title">Projects</h2>
+                    <p class="mb-100">
+                        
+                    </p>
+                </div>
+
+                {% for project in projects.all %}
+                <div class="card">
+                    <a href="{% url 'detail' project.id %}">
+                        <div class="content">
+                            <div class="imgBx">
+                                <img src="{{ project.image.url }}">
+                            </div>
+                            <div class="contentBx">
+                                <a href="{% url 'detail' project.id %}">
+                                    <h3>{{ project.heading }}<br><span>{{  project.subheading }}</span></h3>
+                            </div>                  
+                            
+                        </div>
+
+                    <ul class="sci">
+                        <li>
+                            <a href="{% url 'detail' project.id %}">{{ project.summary }}</a>
+                        </li>
+                    </ul>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- background image -->
+            <img class="img-fluid projects-bg" src="{% static 'images/backgrounds/seo-bg.png' %}" alt="seo-bg">
+            <!-- background-shape -->
+            <img class="projects-bg-shape-1 left-right-animation" src="{% static 'images/background-shape/seo-ball-1.png' %}" alt="bg-shape">
+            <img class="projects-bg-shape-2 up-down-animation" src="{% static 'images/background-shape/seo-half-cycle.png' %}" alt="bg-shape">
+            <img class="projects-bg-shape-3 left-right-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="bg-shape">
+            
+        </section>
+        <!-- End Project area -->
+
+        <!-- resume -->
+        <section id="{{ inpage_links.resume }}" class="resume">
+            <div class="container">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-title">Resume</h2>
+                </div>
+
+                
+                <!-- <div class="card"> -->
+                    <div class="content">
+                        <div class="row">
+                            <!-- <div class="card"> -->
+                                <object class="card" data="{% static 'pdfs/Chaitanya Khairnar.pdf' %}" type="application/pdf" width="100%" height="100%">
+                                    <p>Alternative text - include a link <a href="{% static 'pdfs/Chaitanya Khairnar.pdf' %}">to the PDF!</a></p>
+                                </object>
+                            <!-- </div> -->
+
+                            <!-- <div class="left-column">
+                                {% for info in general_info %}
+                                    <div class="imgBx">
+                                    <img src="{{ info.profile_pic.url }}">
+                                </div> -->
+
+                                <!-- <div class="summary">
+                                    
+                                    <h5>{{ info.first_name }}
+                                    {{ info.last_name }}<br></h5>
+                                    <hr size="1px" color="grey">
+                                    <p><h5>Details</h5></p>
+                                    <h6>{{ info.contact_num}}<br>
+                                    {{ info.e_mail }}<br>
+                                    {{ info.location }}</h6>
+                                    
+                                    <p><h5>Programming</h5>
+                                    <h6>
+                                        {{ info.programming | linebreaksbr }}
+                                    </h6></p>
+
+                                    <p><h5>Tools</h5>
+                                        <h6>
+                                            {{ info.tools | linebreaksbr }}
+                                        </h6></p>
+
+                                        <p><h5>Techniques</h5>
+                                            <h6>
+                                                {{ info.techniques | linebreaksbr }}
+                                            </h6></p>
+                                </div>
+                                {% endfor %}
+                            </div> -->
+
+                            
+                            <!-- <div class="right-column" >
+                                <h4>Summary</h4>
+                                {% for info in general_info %}
+                                    <h6>{{ info.summary | linebreaksbr }}</h6>
+                                {% endfor %}
+                                <h4>Experience</h4>
+                                
+                                {% for job in jobs %}
+                                <h5>{{ job.company_name }}, {{ job.job_location }} <br>
+                                {{ job.designation }} <br>
+                                {{ job.from_date }} - {{ job.to_date }} <br></h5>
+                                
+                                <p>
+                                    <h6> {{ job.in_job_experience | linebreaksbr }} </h6>
+                                </p><br>
+                                {% endfor %}
+                            </div> -->
+                            
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- background image -->
+            <img class="img-fluid service-bg" src="{% static 'images/backgrounds/service-bg.png' %}" alt="service-bg">
+            <!-- background shapes -->
+            <img class="service-bg-shape-1 up-down-animation" src="{% static 'images/background-shape/service-half-cycle.png' %}" alt="background-shape">
+            <img class="service-bg-shape-2 left-right-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="background-shape">
+        </section>
+        <!-- End resume -->
+
+        <!-- Contact Me -->
+        <section id="{{ inpage_links.contact }}" class="section-lg contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-title">Get In Touch</h2>
+                        </div>
+                    </div>
+                    <div class="row contact-bg p-5 rounded mb-5">
+                        <div class="col-lg-7 mb-4 mb-lg-0">
+                            <form method="POST" action="">
+                                {% csrf_token %}
+                                <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
+                                <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email">
+                                <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
+                                <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
+                                <button type="submit" value="send" class="btn btn-secondary">SEND MESSAGE</button>
+                            </form>
+
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+
+                            
+
+                        </div>
+                        <div class="col-lg-5">
+                            <p class="mb-5">If you'll like to know about the projects or implement the projects please feel free to get in touch.</p>
+                            <a href="tel:+442081446356" class="text-color h5 d-block">+353 899 64 83 76</a>
+                            <a href="mailto:info@chaitanyakhairnar.com" class="mb-5 text-color h5 d-block">info@chaitanyakhairnar.com</a>
+                            <!-- <p>71 Shelton Street<br>London WC2H 9JQ England</p> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- background shapes -->
+                <img class="contact-bg-1 up-down-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="background-shape">
+                <img class="contact-bg-2 left-right-animation" src="{% static 'images/background-shape/green-half-cycle.png' %}" alt="background-shape">
+                <img class="contact-bg-3 up-down-animation" src="{% static 'images/background-shape/green-dot.png' %}" alt="background-shape">
+                <img class="contact-bg-4 left-right-animation" src="{% static 'images/background-shape/service-half-cycle.png' %}" alt="background-shape">
+                <img class="contact-bg-5 up-down-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="background-shape">
+            </section>
+        <!-- End Contact Me -->
+
+
+    </main>
+
+
+{% endblock %}
+
