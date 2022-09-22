@@ -169,10 +169,10 @@
                         <div class="col-lg-7 mb-4 mb-lg-0">
                             <form method="POST" action="">
                                 {% csrf_token %}
-                                <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
-                                <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email">
-                                <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject">
-                                <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message"></textarea>
+                                <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name" required>
+                                <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email" required>
+                                <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject" required>
+                                <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message" required></textarea>
                                 <button type="submit" value="send" class="btn btn-secondary">SEND MESSAGE</button>
                             </form>
 
