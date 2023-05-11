@@ -1,0 +1,6 @@
+# Application Directories
+home/__pycache__
+home/migrations
+demo/__pycache__
+tests/__pycache__
+demodashboards
