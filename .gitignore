@@ -1,6 +1,9 @@
 # Application Directories
+__pycache__
+migrations
 home/__pycache__
 home/migrations
 demo/__pycache__
 tests/__pycache__
 demodashboards
+.env
