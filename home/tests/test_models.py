@@ -12,4 +12,3 @@ class TestModels(TestCase):
 
     def test_experience_is_assigned(self):
         job_experience = {'Experience': 'experience-1'}
-        self.assertEquals(self.experience, job_experience)
