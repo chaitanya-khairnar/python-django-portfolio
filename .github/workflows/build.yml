@@ -63,4 +63,4 @@ jobs:
         EMAIL_PORT:  ${{ secrets.EMAIL_PORT }}
         DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
       run: |
-        pytest
+        python manage.py test
