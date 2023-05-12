@@ -47,20 +47,20 @@ jobs:
 #         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 #         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
 #         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-#     - name: Test with Unittest
-#       env:
-#         SECRET_KEY: ${{ secrets.SECRET_KEY }}     
-#         DB_ENGINE:  ${{ secrets.DB_ENGINE }}  
-#         DB_NAME: ${{ secrets.DB_NAME }}
-#         DB_USER: ${{ secrets.DB_USER }}
-#         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-#         DB_HOST:  ${{ secrets.DB_HOST }}
-#         DB_PORT:  ${{ secrets.DB_PORT }}
-#         EMAIL_BACKEND:  ${{ secrets.EMAIL_BACKEND }}
-#         EMAIL_HOST:  ${{ secrets.EMAIL_HOST }}
-#         EMAIL_HOST_USER:  ${{ secrets.EMAIL_HOST_USER }}
-#         EMAIL_HOST_PASSWORD:  ${{ secrets.EMAIL_HOST_PASSWORD }}
-#         EMAIL_PORT:  ${{ secrets.EMAIL_PORT }}
-#         DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
-#       run: |
-#         pytest
+    - name: Test with Unittest
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}     
+        DB_ENGINE:  ${{ secrets.DB_ENGINE }}  
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_HOST:  ${{ secrets.DB_HOST }}
+        DB_PORT:  ${{ secrets.DB_PORT }}
+        EMAIL_BACKEND:  ${{ secrets.EMAIL_BACKEND }}
+        EMAIL_HOST:  ${{ secrets.EMAIL_HOST }}
+        EMAIL_HOST_USER:  ${{ secrets.EMAIL_HOST_USER }}
+        EMAIL_HOST_PASSWORD:  ${{ secrets.EMAIL_HOST_PASSWORD }}
+        EMAIL_PORT:  ${{ secrets.EMAIL_PORT }}
+        DEFAULT_FROM_EMAIL: ${{ secrets.DEFAULT_FROM_EMAIL }}
+      run: |
+        pytest
