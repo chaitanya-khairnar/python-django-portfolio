@@ -9,4 +9,5 @@ tests/__pycache__
 demodashboards
 .env
 portfolio/media/images
+media/images
 home/__pycache__
