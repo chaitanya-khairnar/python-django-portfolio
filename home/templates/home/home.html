@@ -5,19 +5,19 @@
         <section id="{{ inpage_links.home }}" class="hero-section hero" data-background="" style="background-image: url(/static/images/hero-area/banner-bg.png);">
             <div class="container">
                 <div class="row">
-                    {% for job in jobs %}
                         {% for general_info in general_info.all %}
                             <div class="col-lg-12 text-center zindex-1">
                             <h1 class="mb-3">{{ general_info.first_name }} {{ general_info.last_name }}<br></h1>
-                            <h4 class="mb-3">{{ general_info.summary }} <br><br>
-                                {{ job.designation }} @ {{ job.company_name }} </h4>
-                            <p class="mb-4">{{ general_info.skills }}</p>
+                            <h4 class="mb-3">{{ general_info.heading }} <br><br>
+                            <p class="mb-4">{{ general_info.sub_heading }}</p>
+                        {% endfor %}
+                        {% with jobs.all|first as job %}
+                            <h4>{{ job.designation }} @ {{ job.company_name }} </h4>
+                        {% endwith %}
                             <a href="#{{ inpage_links.project }}" class="btn btn-secondary btn-lg page-scroll">explore</a>
                             <!-- banner image -->
                             <img class="img-fluid w-100 banner-image" src="{% static 'images/hero-area/banner-img.png' %}" alt="banner-img">
-                            </div>
-                        {% endfor %}
-                    {% endfor %}
+                        </div>
                 </div>
             </div>
             <!-- background shapes -->
@@ -78,89 +78,112 @@
         </section>
         <!-- End Project area -->
 
-        <!-- resume -->
-        <section id="{{ inpage_links.resume }}" class="resume">
+        <!-- web resume -->
+        <section id="{{ inpage_links.resume }}" class="web-resume">
             <div class="container">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-title">Resume</h2>
+                    <p class="mb-100">
+                        
+                    </p>
                 </div>
-
-                
-                <!-- <div class="card"> -->
+                <div class="card">
                     <div class="content">
-                        <div class="row">
-                            <!-- <div class="card"> -->
-                                <object class="card" data="{% static 'pdfs/Chaitanya Khairnar.pdf' %}" type="application/pdf" width="100%" height="100%">
-                                    <p>Alternative text - include a link <a href="{% static 'pdfs/Chaitanya Khairnar.pdf' %}">to the PDF!</a></p>
-                                </object>
-                            <!-- </div> -->
-
-                            <!-- <div class="left-column">
-                                {% for info in general_info %}
-                                    <div class="imgBx">
-                                    <img src="{{ info.profile_pic.url }}">
-                                </div> -->
-
-                                <!-- <div class="summary">
+                        {% for general_info in general_info %}
+                        <div class="resumeBxTitle">
+                            <h3>{{ general_info.first_name }} {{ general_info.last_name }}</h3>
+                        </div>
+                        <div class="resumeBxMatter">
+                            <h5>{{ general_info.location | safe}} | {{ general_info.contact_num | safe}} | {{ general_info.e_mail| safe}}</h5>
+                        </div>
+                        <div class="sociallinks">
+                            <div class="resumeimgBx">
+                                {% if general_info.linkedin %}
+                                    <a href="{{ general_info.linkedin }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="resumeButton"> 
+                                <a href="{{ general_info.resume.url }}">Download CV</a>
+                            </div>
+                        </div> 
+                        <div class="contentBxTitle">
+                            <h3>Summary</h3>
+                        </div>
+                        <div class="contentBxMatter">
+                            <h5>{{ general_info.resume_summary | safe}}</h5>
+                        </div>
+                        {% endfor %}
+                        <div class="contentBxTitle">
+                                <h3>Experience</h3>
+                        </div>
+                        {% for job in jobs.all %}
+                            <div class="row">
+                                <div class="contentBxCompanyName">
+                                    <h5>{{ job.designation}}</h5>
                                     
-                                    <h5>{{ info.first_name }}
-                                    {{ info.last_name }}<br></h5>
-                                    <hr size="1px" color="grey">
-                                    <p><h5>Details</h5></p>
-                                    <h6>{{ info.contact_num}}<br>
-                                    {{ info.e_mail }}<br>
-                                    {{ info.location }}</h6>
-                                    
-                                    <p><h5>Programming</h5>
-                                    <h6>
-                                        {{ info.programming | linebreaksbr }}
-                                    </h6></p>
-
-                                    <p><h5>Tools</h5>
-                                        <h6>
-                                            {{ info.tools | linebreaksbr }}
-                                        </h6></p>
-
-                                        <p><h5>Techniques</h5>
-                                            <h6>
-                                                {{ info.techniques | linebreaksbr }}
-                                            </h6></p>
                                 </div>
-                                {% endfor %}
-                            </div> -->
+                                <div class="date">
+                                    <h5>{{job.from_date|date:'M Y'}} - {{job.to_date|date:'M Y'}}</h5>
+                                </div>
+                            </div>
+                            <div class="contentBxCompanyName">
+                                <h5>{{ job.company_name}} - {{job.job_location}}</h5>
+                            </div>
+                            <div class="contentBxMatter">
+                                <h5>{{ job.in_job_experience | safe}}</h5>
+                            </div>
+                        {% endfor %}
+                        
+                        <div class="contentBxTitle">
+                            <h3>Technical skills</h3>
+                        </div>
+                        {% for general_info in general_info.all %}
+                            <div class="contentBxMatter">
+                                <h5> 
+                                    {{ general_info.technical_skills | safe }}
+                                </h5>
+                            </div>
+                        {% endfor %}
 
-                            
-                            <!-- <div class="right-column" >
-                                <h4>Summary</h4>
-                                {% for info in general_info %}
-                                    <h6>{{ info.summary | linebreaksbr }}</h6>
-                                {% endfor %}
-                                <h4>Experience</h4>
-                                
-                                {% for job in jobs %}
-                                <h5>{{ job.company_name }}, {{ job.job_location }} <br>
-                                {{ job.designation }} <br>
-                                {{ job.from_date }} - {{ job.to_date }} <br></h5>
-                                
-                                <p>
-                                    <h6> {{ job.in_job_experience | linebreaksbr }} </h6>
-                                </p><br>
-                                {% endfor %}
-                            </div> -->
-                            
-                        <!-- </div> -->
+                        <div class="contentBxTitle">
+                            <h3>Education</h3>
+                        </div>
+                        {% for education in education.all %}
+                            <div class="row">
+                                <div class="contentBxCompanyName">
+                                    <h5> 
+                                        {{ education.course | safe }}
+                                    </h5>
+                                </div>
+                                <div class="date">
+                                    <h5>{{ education.start_year }} - {{ education.finish_year }}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="contentBxMatter">
+                                    <h5> 
+                                        {{ education.university }} <br><br>
+                                        {% if education.subjects %}
+                                            Subjects: {{ education.subjects }}
+                                        {% endif %}
+                                    </h5>
+                                </div>
+                            </div>                            
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-
-
             <!-- background image -->
-            <img class="img-fluid service-bg" src="{% static 'images/backgrounds/service-bg.png' %}" alt="service-bg">
+            <img class="img-fluid resume-bg" src="{% static 'images/backgrounds/service-bg.png' %}" alt="resume-bg">
             <!-- background shapes -->
-            <img class="service-bg-shape-1 up-down-animation" src="{% static 'images/background-shape/service-half-cycle.png' %}" alt="background-shape">
-            <img class="service-bg-shape-2 left-right-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="background-shape">
+            <img class="service-bg-shape-1 up-down-animation" src="{% static 'images/background-shape/yellow-triangle.png' %}" alt="background-shape">
+            <img class="service-bg-shape-2 up-down-animation" src="{% static 'images/background-shape/seo-ball-2.png' %}" alt="background-shape">
         </section>
-        <!-- End resume -->
+        <!-- end web resume -->
 
         <!-- Contact Me -->
         <section id="{{ inpage_links.contact }}" class="section-lg contact">
@@ -200,15 +223,11 @@
                 <!-- background shapes -->
                 <img class="contact-bg-1 up-down-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="background-shape">
                 <img class="contact-bg-2 left-right-animation" src="{% static 'images/background-shape/green-half-cycle.png' %}" alt="background-shape">
-                <img class="contact-bg-3 up-down-animation" src="{% static 'images/background-shape/green-dot.png' %}" alt="background-shape">
+                <img class="contact-bg-3 left-right-animation" src="{% static 'images/background-shape/green-dot.png' %}" alt="background-shape">
                 <img class="contact-bg-4 left-right-animation" src="{% static 'images/background-shape/service-half-cycle.png' %}" alt="background-shape">
                 <img class="contact-bg-5 up-down-animation" src="{% static 'images/background-shape/feature-bg-2.png' %}" alt="background-shape">
             </section>
         <!-- End Contact Me -->
-
-
     </main>
 
-
 {% endblock %}
-

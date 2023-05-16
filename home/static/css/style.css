@@ -798,6 +798,278 @@ a:hover {
 
 /* End projects */
 
+/* web resume */
+
+.resume-bg {
+  position: absolute;
+  right: 0;
+  top: 10%;
+  z-index: -1;
+}
+@media (max-width: 1200px) {
+  .resume-bg {
+    max-width: 500px;
+  }
+}
+
+.web-resume {
+  position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.web-resume-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+@media (max-width: 1200px) {
+  .web-resume-bg {
+    max-width: 500px;
+  }
+}
+@media (max-width: 991px) {
+  .web-resume-bg {
+    max-width: 400px;
+  }
+}
+
+.web-resume-bg-shape-1 {
+  position: absolute;
+  left: 25%;
+  top: 0;
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .web-resume-bg-shape-1 {
+    display: none;
+  }
+}
+.web-resume-bg-shape-2 {
+  position: absolute;
+  right: 2%;
+  top: 40%;
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .web-resume-bg-shape-2 {
+    display: none;
+  }
+}
+.web-resume-bg-shape-3 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .web-resume-bg-shape-3 {
+    display: none;
+  }
+}
+
+.web-resume .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.web-resume .container .card {
+  position: relative;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  padding: 50px;
+}
+
+.web-resume .container .card .content {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.web-resume .container .card .content .sociallinks{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.web-resume .container .card .content .sociallinks .resumeimgBx {
+    position: relative;
+    align-self: center;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.web-resume .container .card .content .sociallinks .resumeimgBx path {
+    position: absolute;
+    color: #0a66c2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .web-resume .container .card .content .resumeButton {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  background-color: #ff451b;
+  padding: 10px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+} */
+.web-resume .container .card .content .resumeButton a{
+  position: relative;
+	font-size: 18px;
+  font-weight: 400;
+	color: #fff;
+  background-color: #ff451b;
+	display: inline-block;
+	border: 0.5px solid #757575;
+	border-radius: 5px;
+	padding: 6px 20px 5px 20px;
+  line-height: 0.5em;
+	white-space: nowrap;
+}
+
+/* .web-resume .container .card .content .resumeimgBx:hover path {
+    transform: translateY(-10px);
+} */
+
+.web-resume .container .card .content .resumeBxTitle h3 {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0 0;
+  /* padding-left: 20px; */
+  line-height: 1.1em;
+}
+
+.web-resume .container .card .content .resumeBxMatter h5 {
+  color: rgb(0, 0, 0);
+  font-weight: 150;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  margin: 20px 0 10px;
+  /* padding-left: 40px;
+  padding-right: 40px; */
+  line-height: 1.1em;
+}
+
+.web-resume .container .card .content .contentBxTitle h3 {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: left;
+    margin: 20px 0 0;
+    padding-left: 20px;
+    line-height: 1.1em;
+}
+
+.web-resume .container .card .content .contentBxCompanyName h5 {
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 18px;
+  text-align: left;
+  margin: 20px 0 0;
+  padding-left: 20px;
+  line-height: 0.5em;
+}
+
+.web-resume .container .card .content .date h5{
+  /* margin-left: auto; */
+  margin-top: 10px;
+  right: 10px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+	font-size: 18px;
+  font-weight: 300;
+	color: #ff451b;
+	display: inline-block;
+	border: 0.5px solid #757575;
+	border-radius: 50px;
+	padding: 6px 33px 5px 33px;
+  line-height: 0.5em;
+	white-space: nowrap;
+}
+
+.web-resume .container .card .content .contentBxMatter h5 {
+  color: rgb(0, 0, 0);
+  font-weight: 150;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: justify;
+  margin: 20px 0 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 1.1em;
+}
+
+/* .web-resume .container .card .sci {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.web-resume .container .card .sci li {
+    list-style: none;
+  width: 90%;
+  padding: 2px;
+    margin: 0 0px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+  border-radius: 15px;
+}
+
+.web-resume .container .card:hover .sci li {
+    transform: translateY(0px);
+    opacity: 1;
+  background-color: #f0f0f0;
+}
+
+.web-resume .container .card .sci li a {
+    color: rgb(29, 29, 29);
+    font-size: 20px;
+} */
+
+/* end web resume */
+
 /* resume */
 .resume{
   position: relative;

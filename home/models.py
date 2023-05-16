@@ -1,5 +1,5 @@
 from django.db import models
-# from typing import Dict
+import datetime
 
 
 # Create your models here.
@@ -20,12 +20,14 @@ class General_info(models.Model):
     e_mail = models.EmailField(max_length=50)
     birth_date = models.DateField()
     location = models.CharField(max_length=50)
-    summary = models.TextField(max_length=1000, blank=True, null=True)
-    skills = models.TextField(max_length=500, blank=True, null=True)
-    # programming = models.TextField(max_length=1000, blank=True, null=True)
-    # tools = models.TextField(max_length=1000, blank=True, null=True)
-    # techniques = models.TextField(max_length=1000, blank=True, null=True)
+    heading = models.TextField(max_length=1000, blank=True, null=True)
+    resume_summary = models.TextField(max_length=3000)
+    sub_heading = models.TextField(max_length=500, blank=True, null=True)
     certification = models.TextField(max_length=1000, blank=True, null=True)
+    website = models.CharField(max_length=150, blank=True, null=True)
+    linkedin = models.CharField(max_length=150, blank=True, null=True)
+    resume = models.FileField(upload_to='images/', null=True)
+    technical_skills = models.TextField(max_length=1000, blank=True, null=True)
 
     class Meta():
         verbose_name_plural = "General info"
@@ -41,12 +43,7 @@ class Jobs(models.Model):
     designation = models.CharField(max_length=50)
     from_date = models.DateField()
     to_date = models.DateField(null=True)
-    in_job_experience = models.TextField(max_length=500, null=True)
-    # general_info = models.ForeignKey(
-    # General_info,
-    # related_name="jobs",
-    # on_delete=models.DO_NOTHING
-    # )
+    in_job_experience = models.TextField(max_length=3000)
 
     class Meta():
         verbose_name_plural = "Jobs"
@@ -88,3 +85,29 @@ class Project(models.Model):
     def __str__(self) -> str:
         model_name = self.heading + ' - ' + self.subheading
         return model_name
+
+
+class Education(models.Model):
+    YEAR_CHOICES = []
+    for r in range(1980, (datetime.datetime.now().year+1)):
+        YEAR_CHOICES.append((r, r))
+
+    course = models.CharField(max_length=150)
+    university = models.CharField(max_length=150)
+    start_year = models.IntegerField(
+        ('year'),
+        choices=YEAR_CHOICES,
+        default=datetime.datetime.now().year
+    )
+    finish_year = models.IntegerField(
+        ('year'),
+        choices=YEAR_CHOICES,
+        default=datetime.datetime.now().year
+    )
+    subjects = models.TextField(max_length=500, blank=True, null=True)
+
+    class Meta():
+        verbose_name_plural = "Education"
+
+    def __str__(self) -> str:
+        return self.course
