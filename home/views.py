@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import General_info, Project, Jobs
+from .models import General_info, Project, Jobs, Experience, Education
 from django.contrib import messages
 from django.core.mail import send_mail
 
@@ -11,7 +11,9 @@ def BASE(request):
 def home(request):
     projects = Project.objects
     general_info = General_info.objects.all()
+    experience = Experience.objects.all()
     jobs = Jobs.objects.all().order_by('-from_date')
+    education = Education.objects.all()
     # exp = Experience.objects.all()
     inpage_links = {
         "home": "home",
@@ -37,8 +39,10 @@ def home(request):
 
     return render(request, 'home/home.html', {
             'projects': projects,
+            'experience': experience,
             'general_info': general_info,
             'jobs': jobs,
+            'education': education,
             'inpage_links': inpage_links,
             'page_id': page_id,
         }

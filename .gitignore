@@ -1,6 +1,14 @@
 # Application Directories
+__pycache__
+migrations
 home/__pycache__
 home/migrations
+portfolio/__pycache__
 demo/__pycache__
 tests/__pycache__
 demodashboards
+.env
+portfolio/media/images
+media/images
+home/__pycache__
+portfolio/static
