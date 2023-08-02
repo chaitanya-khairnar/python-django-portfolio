@@ -83,6 +83,10 @@ class Project(models.Model):
         verbose_name_plural = "Projects"
 
     def __str__(self) -> str:
+        if self.subheading is None:
+            model_name = self.heading
+            return model_name
+
         model_name = self.heading + ' - ' + self.subheading
         return model_name
 

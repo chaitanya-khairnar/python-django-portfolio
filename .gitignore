@@ -12,3 +12,6 @@ portfolio/media/images
 media/images
 home/__pycache__
 portfolio/static
+manage.py
+home/__pycache__/
+portfolio/wsgi.py
