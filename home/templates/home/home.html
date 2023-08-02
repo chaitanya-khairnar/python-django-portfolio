@@ -54,15 +54,24 @@
                             </div>
                             <div class="contentBx">
                                 <a href="{% url 'detail' project.id %}">
-                                    <h3>{{ project.heading }}<br><span>{{  project.subheading }}</span></h3>
-                            </div>                  
-                            
+                                    {% if project.subheading is None %}
+                                        <h3>{{ project.heading }}</h3>
+                                    {% else %}
+                                        <h3>{{ project.heading }}<br><span>{{  project.subheading }}</span></h3>
+                                    {% endif %}
+                            </div>
                         </div>
 
                     <ul class="sci">
-                        <li>
-                            <a href="{% url 'detail' project.id %}">{{ project.summary }}</a>
-                        </li>
+                        {% if project.summary is None %}
+                            <li>
+                                <a href="{% url 'detail' project.id %}"></a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'detail' project.id %}">{{ project.summary }}</a>
+                            </li>
+                        {% endif %}
                     </ul>
                     </a>
                 </div>
