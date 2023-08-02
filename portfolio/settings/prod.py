@@ -8,3 +8,4 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['159.223.18.162', 'chaitanyakhairnar.io', 'www.chaitanyakhairnar.io']
+
