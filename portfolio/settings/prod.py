@@ -7,4 +7,4 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['159.223.18.162', 'chaitanyakhairnar.com', 'www.chaitanyakhairnar.com']
+ALLOWED_HOSTS = ['159.223.18.162', 'chaitanyakhairnar.io', 'www.chaitanyakhairnar.io']

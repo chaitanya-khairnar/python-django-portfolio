@@ -33,7 +33,7 @@ def home(request):
             name + '  ' + subject,
             formatted_message,
             mail,
-            ['info@chaitanyakhairnar.com'],
+            ['info@chaitanyakhairnar.io'],
         )
         messages.success(request, 'Thanks for your email will respond shortly!')
 
