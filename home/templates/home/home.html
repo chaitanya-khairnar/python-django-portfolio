@@ -10,10 +10,20 @@
                             <h1 class="mb-3">{{ general_info.first_name }} {{ general_info.last_name }}<br></h1>
                             <h4 class="mb-3">{{ general_info.heading }} <br><br>
                             <p class="mb-4">{{ general_info.sub_heading }}</p>
+                            <p class="mb-4">
+                            {% if general_info.linkedin != None %}
+                                <a href="{{ general_info.linkedin }}"><img src="{% static 'images/linkedin.png' %}" height="30" width="30"></a>
+                            {% endif %}
+                            {% if general_info.github != None %}
+                                <a href="{{ general_info.github }}"><img src="{% static 'images/github.png' %}" height="30" width="30"></a>
+                            {% endif %}
+                            <h4> {{ general_info.job_title }} </h4>
                         {% endfor %}
-                        {% with jobs.all|first as job %}
+                    </p>
+                        <!-- {% with jobs.all|first as job %}
                             <h4>{{ job.designation }}</h4>
-                        {% endwith %}
+                        {% endwith %} -->
+
                             <a href="#{{ inpage_links.project }}" class="btn btn-secondary btn-lg page-scroll">explore</a>
                             <!-- banner image -->
                             <img class="img-fluid w-100 banner-image" src="{% static 'images/hero-area/banner-img.png' %}" alt="banner-img">
