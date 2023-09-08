@@ -1,5 +1,5 @@
-<h1 align="center">Welcome to developer-portfolio 👋</h1>
-<a href="https://github.com/chaitanya-khairnar/chaitanyakhairnar_portfolio/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-Apache2.0-orange?link=https%3A%2F%2Fgithub.com%2Fchaitanya-khairnar%2Fchaitanyakhairnar_portfolio%2Fblob%2Fmain%2FLICENSE"></a>
+<h1 align="center">Welcome to python-developer-portfolio 👋</h1>
+<img alt="http://chaitanyakhairnar.io/" https://img.shields.io/badge/live%20preview-blue?link=http%3A%2F%2Fchaitanyakhairnar.io%2F><a href="https://github.com/chaitanya-khairnar/chaitanyakhairnar_portfolio/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-Apache2.0-orange?link=https%3A%2F%2Fgithub.com%2Fchaitanya-khairnar%2Fchaitanyakhairnar_portfolio%2Fblob%2Fmain%2FLICENSE"></a>
 
 Personal portfolio website made with Django framework in the backend, and with CSS, JS, and Bootstrap for the frontend. It is a dynamic site so that you can control the content of the site through the admin area.
 
