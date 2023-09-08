@@ -1,9 +1,9 @@
-<h1 align="center">Welcome to python-developer-portfolio 👋</h1>
+<h1 align="center">Welcome to python-django-portfolio 👋</h1>
 
 <h3 align="center">
 <a href="https://chaitanyakhairnar.io"><img alt="Live Preview" src="https://img.shields.io/badge/live%20preview-blue?link=http%3A%2F%2Fchaitanyakhairnar.io%2F"></a>
-<a href="https://github.com/chaitanya-khairnar/chaitanyakhairnar_portfolio/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-Apache2.0-orange?link=https%3A%2F%2Fgithub.com%2Fchaitanya-khairnar%2Fchaitanyakhairnar_portfolio%2Fblob%2Fmain%2FLICENSE"></a>
-<a href="https://codecov.io/github/chaitanya-khairnar/chaitanyakhairnar_portfolio" ><img src="https://codecov.io/github/chaitanya-khairnar/chaitanyakhairnar_portfolio/graph/badge.svg?token=ZBZN0JAGXT"/></a>
+<a href="https://github.com/chaitanya-khairnar/python-django-portfolio/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-Apache2.0-orange?link=https%3A%2F%2Fgithub.com%2Fchaitanya-khairnar%2Fpython-django-portfolio%2Fblob%2Fmain%2FLICENSE"></a>
+<a href="https://codecov.io/github/chaitanya-khairnar/python-django-portfolio" ><img src="https://codecov.io/github/chaitanya-khairnar/python-django-portfolio/graph/badge.svg?token=ZBZN0JAGXT"/></a>
 </h3>
 
 Personal portfolio website made with Django framework in the backend, and with CSS, JS, and Bootstrap for the frontend. It is a dynamic site so that you can control the content of the site through the admin area.
@@ -13,7 +13,7 @@ Personal portfolio website made with Django framework in the backend, and with C
 1. Fork this repoistory and clone it to your local machine.
 
 ```bash
-$ git clone https://github.com/<your-username>/chaitanyakhairnar_portfolio.git
+$ git clone https://github.com/<your-username>/python-django-portfolio.git
 ```
 
 2. Go into the repository

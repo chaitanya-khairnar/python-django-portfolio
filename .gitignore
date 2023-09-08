@@ -16,3 +16,4 @@ portfolio/settings/prod.py
 portfolio/settings/dev.py
 manage.py
 home/__pycache__/
+portfolio/wsgi.py
