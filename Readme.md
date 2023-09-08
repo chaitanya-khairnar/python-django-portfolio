@@ -2,6 +2,7 @@
 
 <a href="https://chaitanyakhairnar.io"><img alt="Live Preview" src="https://img.shields.io/badge/live%20preview-blue?link=http%3A%2F%2Fchaitanyakhairnar.io%2F"></a>
 <a href="https://github.com/chaitanya-khairnar/chaitanyakhairnar_portfolio/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-Apache2.0-orange?link=https%3A%2F%2Fgithub.com%2Fchaitanya-khairnar%2Fchaitanyakhairnar_portfolio%2Fblob%2Fmain%2FLICENSE"></a>
+<a href="https://codecov.io/github/chaitanya-khairnar/chaitanyakhairnar_portfolio" ><img src="https://codecov.io/github/chaitanya-khairnar/chaitanyakhairnar_portfolio/graph/badge.svg?token=ZBZN0JAGXT"/></a>
 
 Personal portfolio website made with Django framework in the backend, and with CSS, JS, and Bootstrap for the frontend. It is a dynamic site so that you can control the content of the site through the admin area.
 
