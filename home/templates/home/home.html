@@ -12,10 +12,10 @@
                             <p class="mb-4">{{ general_info.sub_heading }}</p>
                             <p class="mb-4">
                             {% if general_info.linkedin != None %}
-                                <a href="{{ general_info.linkedin }}"><img src="{% static 'images/linkedin.png' %}" height="30" width="30"></a>
+                                <a class="linkedin" href="{{ general_info.linkedin }}"><i class="ti-linkedin"></i></a>
                             {% endif %}
                             {% if general_info.github != None %}
-                                <a href="{{ general_info.github }}"><img src="{% static 'images/github.png' %}" height="30" width="30"></a>
+                                <a class="black" href="{{ general_info.github }}"><i class="ti-github"></i></a>
                             {% endif %}
                             <h4> {{ general_info.job_title }} </h4>
                         {% endfor %}
