@@ -1476,7 +1476,7 @@ a:hover {
 }
 .footer-section {
   padding-top: 500px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
   background: url('/static/images/backgrounds/footer-bg.png');
 }
 .footer-menu a {

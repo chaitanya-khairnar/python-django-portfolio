@@ -27,6 +27,8 @@ class General_info(models.Model):
     website = models.CharField(max_length=150, blank=True, null=True)
     linkedin = models.CharField(max_length=150, blank=True, null=True)
     github = models.CharField(max_length=150, blank=True, null=True)
+    facebook = models.CharField(max_length=150, blank=True, null=True)
+    twitter = models.CharField(max_length=150, blank=True, null=True)
     resume = models.FileField(upload_to='images/', null=True)
     technical_skills = models.TextField(max_length=1000, blank=True, null=True)
 

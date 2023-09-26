@@ -22,6 +22,16 @@
                                     <a class="black" href="{{ general_info.github }}"><i class="ti-github"></i></a>
                                 </li>
                                 {% endif %}
+                                {% if general_info.facebook != None %}
+                                <li class="list-inline-item">
+                                    <a class="facebook" href="{{ general_info.facebook }}"><i class="ti-facebook"></i></a>
+                                </li>
+                                {% endif %}
+                                {% if general_info.twitter != None %}
+                                <li class="list-inline-item">
+                                    <a class="twitter" href="{{ general_info.twitter }}"><i class="ti-twitter-alt"></i></a>
+                                </li>
+                                {% endif %}
                             </ul>
                             <h4> {{ general_info.job_title }} </h4>
                         {% endfor %}
